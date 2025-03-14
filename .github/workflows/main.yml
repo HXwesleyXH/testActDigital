@@ -26,3 +26,8 @@ jobs:
 
     - name: "Step: Upload Artifact"
       uses: ./.github/actions/upload_artifact
+
+    - name: "Step: Create release"
+      uses: ./.github/actions/create_release
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}

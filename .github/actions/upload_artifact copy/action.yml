@@ -1,0 +1,11 @@
+name: "GH Actions: Upload de Artefato"
+description: Efetua o upload de um artefato
+
+runs:
+  using: composite
+  steps:
+      - name: Armazenar artefato como release do GitHub
+        uses: actions/upload-artifact@v4
+        with:
+          name: actdigital_cicd
+          path: ./actdigital_cicd
