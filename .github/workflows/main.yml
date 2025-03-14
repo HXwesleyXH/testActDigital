@@ -23,3 +23,6 @@ jobs:
 
     - name: "Step: Test NPM"
       uses: ./.github/actions/test_app
+
+    - name: "Step: Upload Artifact"
+      uses: ./.github/actions/upload_artifact
