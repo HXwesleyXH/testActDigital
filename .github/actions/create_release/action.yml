@@ -1,0 +1,15 @@
+name: "GH Actions: Cria Release"
+description: Executa a criação de release
+
+runs:
+  using: composite
+  steps:
+    - name: Criar uma release no GitHub
+      uses: ncipollo/release-action@v1
+      with:
+        token: ${{ inputs.token }}
+        tag: v1.0.${{ github.run_number }}
+        name: "Release v1.0.${{ github.run_number }}"
+        body: "Release gerada automaticamente pelo pipeline de CI/CD."
+        draft: false
+        prerelease: false
