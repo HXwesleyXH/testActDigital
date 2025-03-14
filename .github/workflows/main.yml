@@ -1,0 +1,19 @@
+name: CI/CD Pipeline Act Digital
+
+permissions:
+  contents: write
+
+on:
+  push:
+    branches: [dev]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  actDigital_CI:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: "Step: SCM Clone"
+      uses: actions/checkout@v4
