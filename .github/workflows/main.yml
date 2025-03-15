@@ -28,6 +28,7 @@ jobs:
       uses: ./.github/actions/upload_artifact
 
     - name: "Step: Create release"
+      if: github.ref == 'refs/heads/main'
       uses: ./.github/actions/create_release
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
