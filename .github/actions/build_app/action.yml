@@ -1,0 +1,21 @@
+name: "GH Actions: Node Build"
+description: Efetua o preparo de requisitos e executa o build
+
+runs:
+  using: composite
+  steps:
+    - name: "Prepare Node"
+      id: prepareNode
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: "Build Node"
+      id: npmBuild
+      shell: bash
+      run: |
+        echo ::group::
+        cd actdigital_cicd
+        npm install
+        npm run build
+        echo ::ungroup::

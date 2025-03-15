@@ -1,0 +1,14 @@
+name: "GH Actions: Node Test"
+description: Executa o teste npm
+
+runs:
+  using: composite
+  steps:
+    - name: "Build Node"
+      id: npmTest
+      shell: bash
+      run: |
+        echo ::group::
+        cd actdigital_cicd
+        npm run test
+        echo ::ungroup::

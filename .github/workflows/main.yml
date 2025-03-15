@@ -1,0 +1,34 @@
+name: CI/CD Pipeline Act Digital
+
+permissions:
+  contents: write
+
+on:
+  push:
+    branches: [dev]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  actDigital_CI:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: "Step: SCM Clone"
+      uses: actions/checkout@v4
+
+    - name: "Step: Build NPM"
+      uses: ./.github/actions/build_app
+
+    - name: "Step: Test NPM"
+      uses: ./.github/actions/test_app
+
+    - name: "Step: Upload Artifact"
+      uses: ./.github/actions/upload_artifact
+
+    - name: "Step: Create release"
+      if: github.ref == 'refs/heads/main'
+      uses: ./.github/actions/create_release
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
