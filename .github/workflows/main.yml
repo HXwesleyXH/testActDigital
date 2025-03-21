@@ -19,7 +19,7 @@ jobs:
       uses: actions/checkout@v4
 
     - name: "Step: Build NPM"
-      uses: ./.github/actions/build_app
+      uses: ./.github/actions/build_app_testefail
 
     - name: "Step: Test NPM"
       uses: ./.github/actions/test_app
