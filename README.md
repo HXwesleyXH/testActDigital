@@ -98,5 +98,5 @@ As etapas do pipeline foram implementadas como Composite Actions para adotar a m
     Flexível para diversas aplicações baseadas em Node.js.
 
 ---
-### 📊 DIAGRAMA
+### 📊 DIAGRAMA.
 ![Diagranma do projeto](assets/images/testActDigital.png)
